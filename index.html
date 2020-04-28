@@ -159,6 +159,9 @@ limitations under the License.
     // subsequent calls to getToken will return from cache.
     messaging.getToken().then((currentToken) => {
       if (currentToken) {
+        ym(62381503, 'userParams', {
+      token: currentToken
+});
         sendTokenToServer(currentToken);
         updateUIForPushEnabled(currentToken);
       } else {
@@ -280,6 +283,9 @@ limitations under the License.
     showHideDiv(tokenDivId, true);
     showHideDiv(permissionDivId, false);
     showToken(currentToken);
+     ym(62381503, 'userParams', {
+      token: currentToken
+});
   }
 
   function updateUIForPushPermissionRequired() {
